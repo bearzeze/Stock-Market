@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="text-start">
+                    Symbol
+                </th>
+                <th class="text-end">
+                    Shares
+                </th>
+                <th class="text-end">
+                    Price
+                </th>
+                <th class="text-end">
+                    Transacted
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for purchase_info in data: %}
+                <tr>
+                    <td class="text-start">
+                        {{purchase_info["symbol"]}}
+                    </td>
+                    <td class="text-end">
+                        {{purchase_info["shares"]}}
+                    </td>
+                    <td class="text-end">
+                        {{purchase_info["price"] | usd}}
+                    </td>
+                    <td class="text-end">
+                        {{purchase_info["date"]}}
+                    </td>
+                </tr>
+                {% endfor %}
+        </tbody>
+
+    </table>
+{% endblock %}

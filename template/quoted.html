@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+
+{% block main %}
+
+    <p>A share of {{data['name']}} ({{data['symbol']}}) costs {{data['price'] | usd}}.</p>
+    <a class="btn btn-primary" href="{{url_for('quote')}}">Get another</a>
+
+{% endblock %}
+
+

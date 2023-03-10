@@ -1,0 +1,2 @@
+
+SELECT purchases.id, users.username, companies.name, companies.symbol, purchases.price, purchases.shares, purchases.shares FROM purchases JOIN companies ON company_id = companies.id JOIN users ON users.id = user_id;

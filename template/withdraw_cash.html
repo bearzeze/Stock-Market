@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Withdraw Cash
+{% endblock %}
+
+{% block main %}
+    <div class="mb-2">
+        <p>Current balance: <b>{{balance | usd}}</b></p>
+    </div>
+    <form action="/withdraw_cash" method="post">
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="cash"  placeholder ="$0.01" type="number" min="0" step="0.01">
+        </div>
+        <button class="btn btn-primary" type="submit">Withdraw Cash</button>
+    </form>
+{% endblock %}
